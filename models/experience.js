@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
   Schema = mongoose.Schema;
 
-const Activity = require('./activites');
+const Activity = require('./activities.js');
 
 const ExperienceSchema = new Schema({
 	name: String,

@@ -10,7 +10,7 @@
     background-size: cover;
 }
 
-footer {
+/*footer {
     text-transform: uppercase;
     padding: 0 20px 0 20px;
     background-color: #0D2C40;
@@ -23,7 +23,7 @@ footer {
     left: 0;
     position: absolute;
     right: 0;
-}
+}*/
 
 .copyright {
     font-family: Raleway;
