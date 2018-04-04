@@ -18,7 +18,7 @@ $(document).ready(function() {
 	})
 
 
-	
+
 	// Render details
 	$('.mainList').on('click', function(event) {
 		let currentId = event.target.dataset.eventid
@@ -112,6 +112,7 @@ function renderDetails(detail) {
         </div>
       </div>
     </div>
+		
 	`
 	$('.mainList').empty();
 	$('.mainList').append(detailHtml);
