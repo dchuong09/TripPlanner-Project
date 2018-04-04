@@ -35,4 +35,23 @@
     float: right;
     margin-top: 17px;
 }
-
+.experienceBody {
+  max-width: 920px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+.experienceContent {
+  -webkit-box-flex: 0;
+  position: relative;
+  flex: 0 0 66.66666%;
+  max-width: 66.666666%;
+  display: block;
+}
+.experienceSidebar {
+  position: relative;
+  -webkit-box-flex: 0;
+  flex: 0 0 33.333333%;
+  max-width: 33.333333%;
+  display: block;
+}
