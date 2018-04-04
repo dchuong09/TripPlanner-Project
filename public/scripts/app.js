@@ -78,6 +78,7 @@ function handleComplete() {
 	    }
 	    $(this).parent().remove();
 	    $('.mainList').prepend(checkedbox);
+	    $(checkedbox).slideUp(500);
 	  })
 	})
 }
@@ -115,7 +116,7 @@ function renderDetails(detail) {
 		
 	`
 	$('.mainList').empty();
-	$('.mainList').append(detailHtml);
+	$('.mainList').prepend(detailHtml);
 }
 
 
