@@ -23,19 +23,19 @@ const experienceLists = [{
 	address: '19th & Dolores St',
 	description: 'Parks, Playgrounds, Basketball Courts',
 	photo: '',
-	duration: '1 hour'	
+	duration: '1 hour'
 }, {
 	name: 'Palace Of Fine Arts',
 	address: '3601 Lyon St',
 	description: 'Landmarks & Historical Buildings, Venues & Event Spaces',
 	photo: '',
-	duration: '1 hour'	
+	duration: '1 hour'
 }, {
 	name: 'Union Square',
 	address: '333 Post St',
 	description: 'Shopping Centers',
 	photo: '',
-	duration: '1 hour'	
+	duration: '1 hour'
 }];
 
 
