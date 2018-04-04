@@ -21,16 +21,22 @@ $(document).ready(function() {
 	
 	// Render details
 	$('.mainList').on('click', function(event) {
-		let id = event.target;
-		console.log(id);
+		let currentId = $(this).find('.btn-primary').attr('data-eventid');
+		let id = $('.mainList').find('.btn').attr('data-eventid');
+
+		console.log(id, 'this is id');
+		console.log(currentId);
 		$.ajax({
 			method: 'GET',
 			url: '/api/experience',
 			success: function handleDetailSuccess(detailPages) {
+				console.log(detailPages);
 				detailPages.forEach(function(detailPage) {
-					if (detailPage._id === id) {
-						renderDetails(detailPage);
-					}
+					// if (detailPage._id === currentId) {
+					// 	// renderDetails(detailPage);
+					// 	console.log(detailPage)
+					// }
+					// console.log(detailPage)
 				})
 			},
 			error: handleErrorError
@@ -125,7 +131,7 @@ function render(experience) {
 		          <h4 class="card-title">${ experience.name }</h4>
 		          <p class="card-text">${ experience.address }</p>
 		          <p class="card-text1">${ experience.description }</p>
-		          <a  class="btn btn-primary" data-event-id="${ experience._id }">Read More</a>
+		          <a  class="btn btn-primary" data-eventid="${ experience._id }">Read More</a>
 		        </div>
 		      </div>
 		    </div>
