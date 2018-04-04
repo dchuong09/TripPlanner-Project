@@ -9,7 +9,7 @@ const ExperienceSchema = new Schema({
 	description: String,
 	photo: String,
 	activites: [ Activity.schema ],
-	duration: Number
+	duration: String
 });
 
 const Experience = mongoose.model('Experience', ExperienceSchema);
