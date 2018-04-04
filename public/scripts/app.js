@@ -38,11 +38,11 @@ function handleError(err) {
 function render(experience) {
 	let expHtml = `
 	<div class="container py-3" id="chkboxes">
+		<input type="checkbox">
 		<div class="card">
 		  <div class="row ">
 		    <div class="col-md-4">
-		  		<input type="checkbox">
-		        <img src="" class="w-100">
+		        <img src="../images/800x800.png" class="w-50">
 		      </div>
 		      <div class="col-md-8 px-3">
 		        <div class="card-block px-3">
