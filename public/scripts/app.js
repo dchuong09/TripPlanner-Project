@@ -18,7 +18,7 @@ $(document).ready(function() {
 	})
 
 
-	
+
 	// Render details
 	$('.mainList').on('click', function(event) {
 		let currentId = $(this).find('.btn-primary').attr('data-eventid');
@@ -109,6 +109,7 @@ function renderDetails(detail) {
         </div>
       </div>
     </div>
+		
 	`
 	$('.mainList').empty();
 	$('.mainList').append(detailHtml);
