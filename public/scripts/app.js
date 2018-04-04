@@ -8,7 +8,7 @@ console.log('Sanity check!');
 $(document).ready(function() {
 	console.log('app.js loaded')
 
-
+	// Render home page
 	$.ajax({
 		method: 'GET',
 		url: '/api/experience',
@@ -16,6 +16,28 @@ $(document).ready(function() {
 		error: handleError,
 		complete: handleComplete
 	})
+
+
+	
+	// Render details
+	$('.mainList').on('click', function(event) {
+		let id = event.target;
+		console.log(id);
+		$.ajax({
+			method: 'GET',
+			url: '/api/experience',
+			success: function handleDetailSuccess(detailPages) {
+				detailPages.forEach(function(detailPage) {
+					if (detailPage._id === id) {
+						renderDetails(detailPage);
+					}
+				})
+			},
+			error: handleErrorError
+		})
+	})
+
+
 });
 
 function handleSuccess(exps) {
@@ -28,11 +50,18 @@ function handleError(err) {
 	console.log('Throwing error: ', err);
 };
 
+
+
+
+function handleErrorError(err) {
+	console.log('Throwing error: ', err);
+}
+
 // When item was clicked, move top
 function handleComplete() {
 
     $(function(){
-	  var checkedbox;
+	  let checkedbox;
 	  $('input[type="checkbox"]').on('change', function(){
 
 	    if($(this).prop('checked', 'checked')){
@@ -44,13 +73,50 @@ function handleComplete() {
 	})
 }
 
+function renderDetails(detail) {
+	let detailHtml = `
+	 <!-- Page Main -->
+    <div class="experienceBody">
+      <div class="experienceContent">
+        <div class="col-md-8 blog-main">
+          <h2 class="blog-post-title">${ detail.name }</h2>
+          <p class="blog-post-meta">${ detail.type }</p>
+          <hr>
+          <p>San Francisco</p>
+          <p>${ detail.duration }</p>
+          <p>Hiking, biking, photograph</p>
+          <hr>
+          <h2>What to explore</h2>
+          <p>Photograph the Golden Gate Bridge, one of the world's most beloved and scenic icons, with a veteran travel photographer. Discover little known perspectives on our scenic hike on the lovely coastal landscape of the Golden Gate. In spring, wildflowers abound on our route and marine mammals and raptors provide a wildlife show. The moody Golden Gate Bridge is always a delight to photograph, sun or fog.</p>
+          <hr>
+          <h2>Where is it?</h2>
+          <p>Add map API later</p>
+          <hr>
+          <h2>Reviews</h2>
+        </div>
+
+        <!-- Page sidebar -->
+        <div class="experienceSidebar">
+          <div class="col-md-4 blog-sidebar">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHxjr60WCGWKBMSg9evTTXBnD8sUc1poTrZ2CxwQUgd71_KUrZyw" width="300" height="260">
+          </div>
+        </div>
+      </div>
+    </div>
+	`
+	$('.mainList').empty();
+	$('.mainList').append(detailHtml);
+}
+
+
+
 
 function render(experience) {
 	let expHtml = `
 	<div class="container py-3">
 		<input type="checkbox">
 		<div class="card">
-		  <div class="row ">
+		  <div class="row">
 		    <div class="col-4">
 		        <img class="w-74" src=${ experience.photo }>
 		      </div>
@@ -59,15 +125,13 @@ function render(experience) {
 		          <h4 class="card-title">${ experience.name }</h4>
 		          <p class="card-text">${ experience.address }</p>
 		          <p class="card-text1">${ experience.description }</p>
-		          <a href="details.html" class="btn btn-primary">Read More</a>
+		          <a  class="btn btn-primary" data-event-id="${ experience._id }">Read More</a>
 		        </div>
 		      </div>
 		    </div>
 		  </div>
 	</div>
 	`
-	console.log(experience.photo)
 	$('.mainList').prepend(expHtml);
-
 
 }

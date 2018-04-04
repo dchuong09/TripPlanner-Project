@@ -1,57 +1,69 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
+<head>
     <meta charset="utf-8">
     <title>Trip Planner - Details</title>
     <!-- STYLESHEETS -->
-      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-      <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Raleway:400,500,600,700" rel="stylesheet">
-      <link rel="stylesheet" href="styles/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Droid+Serif|Raleway:400,500,600,700" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
 
-      <!-- VENDOR SCRIPTS -->
-      <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-      <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
-    	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!-- VENDOR SCRIPTS -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
-      <!-- APPLICATION SCRIPTS -->
-      <script src="scripts/app.js"></script>
-  </head>
-  <body>
+    <!-- APPLICATION SCRIPTS -->
+    <script src="scripts/app.js"></script>
+</head>
+<body>
 
     <!-- Nav Bar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" id="navIcon">
+      <a class="navbar-brand" id="navIcon" href="/">
         <img src="https://theme.zdassets.com/theme_assets/1592744/78ea6b98e0402a8f12fd6dcea5b12a39eb4cf5b0.png" width="38" height="38">
       </a>
       </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <ul class="nav navbar-nav navbar-right">
-            <li class="nav-item" role="presentation">
-              <a class="nav-link">Trip Planner</a>
+      <div class="navbar navbar-default navbar-custom" id="navcol-1">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="nav-item">
+              <a id="navMid">Trip Planner</a>
             </li>
           </ul>
-      </div>
+        </div>
     </nav>
 
     <!-- Experience Details -->
     <section class="experienceDetailBody"></section>
-      <!-- Page Main -->
+
+    <!-- Page Main -->
     <div class="experienceBody">
       <div class="experienceContent">
         <div class="col-md-8 blog-main">
           <h2 class="blog-post-title">Golden Gate Bridge</h2>
           <p class="blog-post-meta">Natural Experience</p>
           <hr>
+          <p>San Francisco</p>
+          <p>1 hour</p>
+          <p>Hiking, biking, photography</p>
+          <hr>
+          <h2>What to explore</h2>
           <p>Photograph the Golden Gate Bridge, one of the world's most beloved and scenic icons, with a veteran travel photographer. Discover little known perspectives on our scenic hike on the lovely coastal landscape of the Golden Gate. In spring, wildflowers abound on our route and marine mammals and raptors provide a wildlife show. The moody Golden Gate Bridge is always a delight to photograph, sun or fog.</p>
+          <hr>
+          <h2>Where is it?</h2>
+          <p>Add map API later</p>
+          <hr>
+          <h2>Reviews</h2>
         </div>
+
         <!-- Page sidebar -->
         <div class="experienceSidebar">
           <div class="col-md-4 blog-sidebar">
-            <img src="https://www.fillmurray.com/300/200" width="300" height="200">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHxjr60WCGWKBMSg9evTTXBnD8sUc1poTrZ2CxwQUgd71_KUrZyw" width="300" height="260">
           </div>
         </div>
       </div>
@@ -59,10 +71,10 @@
 
     <!-- footer -->
     <footer class="clearfix">
-        <p class="copyright">Copyright 2017</p>
-        <p class="message">Created with <span style="color:red"> &hearts; </span> by <span class="name">GA</span></p>
+      <p class="copyright">Copyright 2017</p>
+      <p class="message">Created with <span style="color:red"> &hearts; </span> by <span class="name">GA</span></p>
     </footer>
 
 
-  </body>
+</body>
 </html>

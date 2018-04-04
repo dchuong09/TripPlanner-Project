@@ -8,6 +8,7 @@ const ExperienceSchema = new Schema({
 	address: String,
 	description: String,
 	photo: String,
+	type: String,
 	activites: [ Activity.schema ],
 	duration: String
 });

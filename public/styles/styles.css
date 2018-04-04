@@ -2,6 +2,14 @@
     margin-left: 420px;
 }
 
+.experienceSidebar {
+    position: fixed;
+    left: 600px;
+    bottom: 400px
+}
+
+
+
 #navMid {
     color: #340D0D;
     font-size: 37px;
@@ -37,7 +45,8 @@ footer {
     float: right;
     margin-top: 17px;
 }
-.experienceBody { 
+.experienceBody {
+  margin-top: 30px; 
   max-width: 920px;
   width: 100%;
   margin-right: auto;
