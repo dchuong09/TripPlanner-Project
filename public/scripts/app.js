@@ -21,21 +21,24 @@ $(document).ready(function() {
 	
 	// Render details
 	$('.mainList').on('click', function(event) {
-		let currentId = $(this).find('.btn-primary').attr('data-eventid');
-		let id = $('.mainList').find('.btn').attr('data-eventid');
+		let currentId = event.target.dataset.eventid
 
-		console.log(id, 'this is id');
-		console.log(currentId);
+		// let id = $('.mainList').find('.btn').attr('data-eventid');
+		// console.log($(this))
+
+
+		// console.log(id, 'this is id');
+		// console.log(currentId);
 		$.ajax({
 			method: 'GET',
 			url: '/api/experience',
 			success: function handleDetailSuccess(detailPages) {
 				console.log(detailPages);
 				detailPages.forEach(function(detailPage) {
-					// if (detailPage._id === currentId) {
-					// 	// renderDetails(detailPage);
-					// 	console.log(detailPage)
-					// }
+					if (detailPage._id === currentId) {
+						renderDetails(detailPage);
+						// console.log(detailPage)
+					}
 					// console.log(detailPage)
 				})
 			},
@@ -93,7 +96,7 @@ function renderDetails(detail) {
           <p>Hiking, biking, photograph</p>
           <hr>
           <h2>What to explore</h2>
-          <p>Photograph the Golden Gate Bridge, one of the world's most beloved and scenic icons, with a veteran travel photographer. Discover little known perspectives on our scenic hike on the lovely coastal landscape of the Golden Gate. In spring, wildflowers abound on our route and marine mammals and raptors provide a wildlife show. The moody Golden Gate Bridge is always a delight to photograph, sun or fog.</p>
+          <p>${ detail.briefDesc }</p>
           <hr>
           <h2>Where is it?</h2>
           <p>Add map API later</p>
