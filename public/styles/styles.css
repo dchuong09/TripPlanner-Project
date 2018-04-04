@@ -1,29 +1,31 @@
-.nav-link {
-    font-size: 30px
+.navbar-right {
+    margin-left: 420px;
 }
 
+#navMid {
+    color: #340D0D;
+    font-size: 37px;
+    font-weight: 700;
+    font-family: "Montserrat", "sans-seriff";
+}
+
+
 .jumbotron {
-    background-image: url('/images/4.png');
+    background-image: url('/images/6.jpg');
     height: 300px;
     background-position: left;
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-/*footer {
+footer {
     text-transform: uppercase;
     padding: 0 20px 0 20px;
     background-color: #0D2C40;
     color: white;
     font-size: 14px;
     letter-spacing: 0.08em;
-    font-weight: 500;
-    bottom: -50px;
-    height: 60px;
-    left: 0;
-    position: absolute;
-    right: 0;
-}*/
+}
 
 .copyright {
     font-family: Raleway;
