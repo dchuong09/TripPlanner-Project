@@ -1,8 +1,21 @@
 console.log('Sanity check!');
 
 
+
+
+
+
 $(document).ready(function() {
 	console.log('app.js loaded')
+
+    $('input[chkboxes]').bind('click', function() {
+        if($(this).is(":checked")) {
+            alert('Hello')
+        } 
+    });
+
+
+
 
 	$.ajax({
 		method: 'GET',
@@ -24,17 +37,18 @@ function handleError(err) {
 
 function render(experience) {
 	let expHtml = `
-	<div class="container py-3">
+	<div class="container py-3" id="chkboxes">
 		<div class="card">
 		  <div class="row ">
 		    <div class="col-md-4">
-		        <img src=${experience.photo} class="w-100">
+		  		<input type="checkbox">
+		        <img src="" class="w-100">
 		      </div>
 		      <div class="col-md-8 px-3">
 		        <div class="card-block px-3">
 		          <h4 class="card-title">${ experience.name }</h4>
 		          <p class="card-text">${ experience.address }</p>
-		          <p class="card-text">${ experience.description }</p>
+		          <p class="card-text1">${ experience.description }</p>
 		          <a href="#" class="btn btn-primary">Read More</a>
 		        </div>
 		      </div>
@@ -43,4 +57,6 @@ function render(experience) {
 	</div>
 	`
 	$('.mainList').prepend(expHtml);
+
+
 }
