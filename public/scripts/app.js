@@ -34,9 +34,24 @@ $(document).ready(function() {
 			error: handleErrorError
 		})
 	})
+	// Create new Location
+	$('.form-horizontal').on('submit', function(e) {
+		e.preventDefault();
+		var formData = $(this).serialize();
+			$.ajax({
+				method: 'POST',
+				url: '/api/experience',
+				data: formData,
+				success: function handleJsonSuccess(newLocation) {
+					$('.newLocationDiv').append(newLocation);
+				},
+				error: function(error) {
+					console.log(error);
+				}
+			})
+	})
 
 
-	
 });
 
 
@@ -68,7 +83,7 @@ function handleComplete() {
 	    }
 	    $(this).parent().remove();
 	    $('.mainList').prepend(checkedbox)
-	    
+
 	  })
 	})
 }
@@ -114,7 +129,8 @@ function renderDetails(detail) {
 
       </div>
     </div>
-		
+
+
 	`
 	$('.mainList').empty();
 	$('.mainList').prepend(detailHtml);
@@ -143,9 +159,9 @@ function render(experience) {
 		    </div>
 		  </div>
 	</div>
+	<div class="newLocationDiv"></div>
+
 	`
 	$('.mainList').prepend(expHtml);
 
 }
-
-

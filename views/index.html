@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-	
+
 	<title>Trip Planner</title>
 
 	<!-- STYLESHEETS -->
@@ -23,7 +23,7 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
 
-	
+
 
     <!-- APPLICATION SCRIPTS -->
     <script src="scripts/app.js"></script>
@@ -56,11 +56,11 @@
       <fieldset>
 
         <!-- Form Name -->
-        <legend>Add New Album</legend>
+        <legend>Add New Location</legend>
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="name">Album Name</label>
+          <label class="col-md-4 control-label" for="name">Name</label>
           <div class="col-md-4">
           <input id="name" name="name" type="text" placeholder="" class="form-control input-md" required="">
 
@@ -69,36 +69,35 @@
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="artistName">Artist Name</label>
+          <label class="col-md-4 control-label" for="address">Address</label>
           <div class="col-md-4">
-          <input id="textinput" name="artistName" type="text" placeholder="" class="form-control input-md">
+          <input id="address" name="address" type="text" placeholder="" class="form-control input-md">
 
           </div>
         </div>
 
         <!-- Text input-->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="releaseDate">Release Date</label>
+          <label class="col-md-4 control-label" for="description">Description</label>
           <div class="col-md-4">
-          <input id="releaseDate" name="releaseDate" type="text" placeholder="1992" class="form-control input-md">
-
+          <input id="description" name="description" type="text" placeholder="" class="form-control input-md">
           </div>
         </div>
 
         <!-- Textarea -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="genres">Genres (separated by commas)</label>
-          <div class="col-md-4">
-            <textarea class="form-control" id="genres" name="genres">rock, pop</textarea>
+          <label class="col-md-4 control-label" for="photo">Photo Link</label>
+					<div class="col-md-4">
+						<input id="photo" name="photo" type="text" placeholder="" class="form-control input-md">
           </div>
         </div>
 
 
         <!-- Button -->
         <div class="form-group">
-          <label class="col-md-4 control-label" for="singlebutton">Save Album</label>
+          <label class="col-md-4 control-label" for="singlebutton"></label>
           <div class="col-md-4">
-            <button id="singlebutton" name="singlebutton" class="btn btn-primary">Submit</button>
+            <button id="submitLocation" name="submitLocation" class="btn btn-primary">Submit</button>
           </div>
         </div>
       </fieldset>
