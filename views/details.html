@@ -73,16 +73,20 @@
     <!-- form -->
       <form class="form-inline">
         <div class="form-group">
+          <label>Name</label>
           <input type="text" name="displayname" class="form-control" placeholder="Name" autofocus>
         </div>
         <div class="form-group">
-          <input type="text" name="review" class="form-control" placeholder="review">
+          <label>Review</label>
+          <textarea type="text" name="review" class="form-control" placeholder="review" rows="3"></textarea>
         </div>
         <div class="pull-right">
           <!-- pencil icon to toggle update form -->
-          <a href="javascript:void(0)" data-toggle="collapse" data-target="#update-{{_id}}">
-            <span class="glyphicon glyphicon-pencil"></span>
-          </a>
+          <!-- <a href="javascript:void(0)" data-toggle="collapse" data-target="#update-{{_id}}"> -->
+            <button type="button" class="btn btn-outline-success mb-2">Save</button>
+            <button type="button" class="btn btn-outline-secondary mb-2">Edit</button>
+            <button type="button" class="btn btn-outline-secondary mb-2">Delete</button>
+          <!-- </a> -->
 
           <!-- trash can icon to delete todo -->
            <a href="javascript:void(0)" class="delete-todo">
