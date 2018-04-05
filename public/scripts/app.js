@@ -2,9 +2,6 @@ console.log('Sanity check!');
 
 
 
-
-
-
 $(document).ready(function() {
 	console.log('app.js loaded')
 
@@ -17,18 +14,11 @@ $(document).ready(function() {
 		complete: handleComplete
 	})
 
-
-
 	// Render details
 	$('.mainList').on('click', function(event) {
 		let currentId = event.target.dataset.eventid
 
 		// let id = $('.mainList').find('.btn').attr('data-eventid');
-		// console.log($(this))
-
-
-		// console.log(id, 'this is id');
-		// console.log(currentId);
 		$.ajax({
 			method: 'GET',
 			url: '/api/experience',
@@ -37,7 +27,6 @@ $(document).ready(function() {
 				detailPages.forEach(function(detailPage) {
 					if (detailPage._id === currentId) {
 						renderDetails(detailPage);
-						// console.log(detailPage)
 					}
 					// console.log(detailPage)
 				})
@@ -46,8 +35,8 @@ $(document).ready(function() {
 		})
 	})
 
-
 });
+
 
 function handleSuccess(exps) {
 	exps.forEach(function(exp) {
@@ -58,7 +47,6 @@ function handleSuccess(exps) {
 function handleError(err) {
 	console.log('Throwing error: ', err);
 };
-
 
 
 
@@ -77,8 +65,8 @@ function handleComplete() {
 	      checkedbox = $(this).parent().clone();
 	    }
 	    $(this).parent().remove();
-	    $('.mainList').prepend(checkedbox);
-	    $(checkedbox).slideUp(500);
+	    $('.mainList').prepend(checkedbox)
+	    
 	  })
 	})
 }
@@ -103,6 +91,15 @@ function renderDetails(detail) {
           <p>Add map API later</p>
           <hr>
           <h2>Reviews</h2>
+     	  <form class="form-inline">
+		      <div class="form-group">
+		          <input type="text" name="displayname" class="form-control" id="name" placeholder="Name" autofocus>
+		      </div>
+		  	  <div class="form-group">
+		    	  <input type="text" name="review" class="form-control" id="comment" placeholder="review">
+		      </div>
+		   	  <input type="submit" id="commentSubmit" value="POST">
+		  </form>
         </div>
 
         <!-- Page sidebar -->
@@ -111,6 +108,11 @@ function renderDetails(detail) {
             <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHxjr60WCGWKBMSg9evTTXBnD8sUc1poTrZ2CxwQUgd71_KUrZyw" width="300" height="260">
           </div>
         </div>
+
+     	<div class="map"></div>
+
+
+
       </div>
     </div>
 		
@@ -146,3 +148,5 @@ function render(experience) {
 	$('.mainList').prepend(expHtml);
 
 }
+
+

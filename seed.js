@@ -7,7 +7,7 @@ const experienceLists = [{
 	photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz3MU9HL0HOZRuk6rgGhjd9Q0xXnDdKgmIjpuhkl3ldP1aD8Iy1g',
 	duration: '2 hour',
 	type: 'Shopping Experience',
-	briefDesc: '' 
+	briefDesc: ''
 }, {
 	name: 'Golden Gate Bridge',
 	address: 'Highway 101',
