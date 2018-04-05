@@ -18,10 +18,10 @@ function create(req, res) {
 
 
 function destroy(req, res) {
-	var commentId = req.params.id;
-	db.Experience.findOneAndRemove({ _id: commentId }, function(err, deletedComment) {
-		res.json(deletedComment);
-	});
+	db.Experience.findByIdAndRemove(req.params.experience._id, function(err, deletedLocation) {
+		if (err) { console.log('error', err); }
+		res.send(200);
+	}); 
 };
 
 

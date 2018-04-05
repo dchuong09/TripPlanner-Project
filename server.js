@@ -26,7 +26,7 @@ app.get('/api/experience', controllers.exp.index);
 
 app.post('/api/experience', controllers.exp.create);
 
-app.delete('/api/experience/:id', controllers.exp.destroy);
+app.delete('/api/experience/:experience._id', controllers.exp.destroy);
 
 app.listen(process.env.PORT || 3000, function() {
 	console.log('Listening on port 3000');
