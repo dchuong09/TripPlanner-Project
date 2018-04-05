@@ -35,6 +35,8 @@ $(document).ready(function() {
 		})
 	})
 
+
+	
 });
 
 
@@ -91,15 +93,12 @@ function renderDetails(detail) {
           <p>Add map API later</p>
           <hr>
           <h2>Reviews</h2>
-     	  <form class="form-inline">
-		      <div class="form-group">
-		          <input type="text" name="displayname" class="form-control" id="name" placeholder="Name" autofocus>
-		      </div>
-		  	  <div class="form-group">
-		    	  <input type="text" name="review" class="form-control" id="comment" placeholder="review">
-		      </div>
-		   	  <input type="submit" id="commentSubmit" value="POST">
-		  </form>
+		     	  <!-- reviews -->
+		    <div class="review">
+
+		      <!-- review display -->
+		      <div class="reviewContent"></div>
+		    </div>
         </div>
 
         <!-- Page sidebar -->

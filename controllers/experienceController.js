@@ -10,9 +10,9 @@ function index(req, res) {
 };
 
 function create(req, res) {
-	var newComment = new db.Experience(req.body);
-	newComment.save(function handleDBCommentSaved(err, savedComment) {
-		res.json(savedComment);
+	var newExperience = new db.Experience(req.body);
+	newExperience.save(function handleDBExpSaved(err, savedExperience) {
+		res.json(savedExperience);
 	});
 };
 
