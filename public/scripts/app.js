@@ -39,20 +39,22 @@ $(document).ready(function() {
 	})
 	// Create new Location
 	$('.form-horizontal').on('submit', function(e) {
-		e.preventDefault();
+		// e.preventDefault();
 		var formData = $(this).serialize();
 			$.ajax({
 				method: 'POST',
 				url: '/api/experience',
 				data: formData,
 				success: function handleJsonSuccess(newLocation) {
-					$('.newLocationDiv').append(newLocation);
+					$('.mainList').append(newLocation);
 				},
 				error: function(error) {
 					console.log(error);
 				}
 			})
 	})
+
+	// Delete a location
 	$('.mainList').on('click', '.delete-btn', function(event){
 			let currentId = event.target.dataset.eventid
 			// debugger;
@@ -169,14 +171,18 @@ function render(experience) {
 		          <h4 class="card-title">${ experience.name }</h4>
 		          <p class="card-text">${ experience.address }</p>
 		          <p class="card-text1">${ experience.description }</p>
-		          <a class="btn btn-primary read-more-btn" data-eventid="${ experience._id }">Read More</a>
-							<a class="btn btn-danger delete-btn" data-eventid="${ experience._id }">Delete</a>
+
+		          <div class='panel-footer'>
+			          <button class="btn btn-primary read-more-btn" data-eventid="${ experience._id }">Read More</button>
+					  <button class="btn btn-info edit-btn">Edit</button>
+					  <button class="btn btn-info save-btn hidden">Save</button>
+					  <button class="btn btn-danger delete-btn" data-eventid="${ experience._id }">Delete</button>
+				  </div>
 		        </div>
 		      </div>
 		    </div>
 		  </div>
 	</div>
-	<div class="newLocationDiv"></div>
 
 	`
 	$('.mainList').prepend(expHtml);
