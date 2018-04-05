@@ -15,7 +15,7 @@ $(document).ready(function() {
 	})
 
 	// Render details
-	$('.mainList').on('click', function(event) {
+	$('.mainList').on('click', '.read-more-btn', function(event) {
 		let currentId = event.target.dataset.eventid
 
 		// console.log(event.target)
@@ -53,15 +53,16 @@ $(document).ready(function() {
 				}
 			})
 	})
-	$('.mainList').on('click', '.btn-danger', function(event){
+	$('.mainList').on('click', '.delete-btn', function(event){
 			let currentId = event.target.dataset.eventid
-			debugger;
+			// debugger;
 			console.log(currentId);
 			console.log('not working');
 			$.ajax({
 				type: 'DELETE',
 				url: '/api/experience/' + currentId,
 				success: function(result) {
+					console.log(	$('[data-eventid=' + currentId + ']'))
 					$('[data-eventid=' + currentId + ']').remove();
 				}
 			})
@@ -156,7 +157,7 @@ function renderDetails(detail) {
 
 function render(experience) {
 	let expHtml = `
-	<div class="container py-3">
+	<div class="container py-3"  data-eventid="${ experience._id }">
 		<input type="checkbox">
 		<div class="cards">
 		  <div class="row">
@@ -168,8 +169,8 @@ function render(experience) {
 		          <h4 class="card-title">${ experience.name }</h4>
 		          <p class="card-text">${ experience.address }</p>
 		          <p class="card-text1">${ experience.description }</p>
-		          <a class="btn btn-primary" data-eventid="${ experience._id }">Read More</a>
-							<a class="btn btn-danger" >Delete</a>
+		          <a class="btn btn-primary read-more-btn" data-eventid="${ experience._id }">Read More</a>
+							<a class="btn btn-danger delete-btn" data-eventid="${ experience._id }">Delete</a>
 		        </div>
 		      </div>
 		    </div>

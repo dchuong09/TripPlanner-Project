@@ -18,15 +18,17 @@ app.get('/', function(req, res) {
 
 app.get('/api', controllers.api.index);
 
-app.get('/api/detail/:id', function(req, res) {
-	console.log(req.body);
-})
+// app.get('/api/detail/:id', function(req, res) {
+// 	console.log(req.body);
+// })
 
 app.get('/api/experience', controllers.exp.index);
 
+app.get('/api/experience/:id', controllers.exp.show)
+
 app.post('/api/experience', controllers.exp.create);
 
-app.delete('/api/experience/:experience._id', controllers.exp.destroy);
+app.delete('/api/experience/:id', controllers.exp.destroy);
 
 app.listen(process.env.PORT || 3000, function() {
 	console.log('Listening on port 3000');
