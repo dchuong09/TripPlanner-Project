@@ -120,6 +120,7 @@ function renderDetails(detail) {
 	let detailHtml = `
 	 <!-- Page Main -->
     <div class="experienceBody">
+    <img align="right" src=${ detail.photo }>
       <div class="experienceContent">
         <div class="col-md-8 blog-main">
           <h2 class="blog-post-title">${ detail.name }</h2>
@@ -213,7 +214,7 @@ function handleLocationUpdateResponse(data) {
 
 
 	// $('[data-eventid=' + locationId + ']').find('.edit-location-name').remove().html('<input class="edit-location-name"> ' ${ data.name } '</input>')
-	
+
 
 
 	$('[data-eventid=' + locationId + ']').remove();

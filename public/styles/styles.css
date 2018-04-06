@@ -85,7 +85,17 @@ footer {
     height: 150px;
 }
 
-
+#topright {
+    position: absolute;
+    left: 700px;
+    top: 0;
+    /*display: block;*/
+    height: 305px;
+    width: 305px;
+    background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRB1tQAyFBVlXbhJAGSDVFOwrhE2_plHbL0iresHTahinW_MN1Vrw');
+    background-repeat: no-repeat;
+    
+}
 
 .copyright {
     font-family: Raleway;
