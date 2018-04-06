@@ -52,7 +52,7 @@ $(document).ready(function() {
 				url: '/api/experience',
 				data: formData,
 				success: function handleJsonSuccess(newLocation) {
-					$('.mainList').append(newLocation);
+					$('.mainList').prepend(newLocation);
 				},
 				error: function(error) {
 					console.log(error);
@@ -133,35 +133,20 @@ function renderDetails(detail) {
           <p>${ detail.briefDesc }</p>
           <hr>
           <h2>Where is it?</h2>
-          <p>Add map API later</p>
+     		<iframe width="600" height="450" frameborder="0" style="border:0" src=${ detail.locationUrl } allowfullscreen></iframe>
           
-          <hr>
-          <h2>Reviews</h2>
-		     	  <!-- reviews -->
-		    <div class="review">
-
-		      <!-- review display -->
-		      <div class="reviewContent"></div>
-		    </div>
         </div>
 
-        <!-- Page sidebar -->
-        <div class="experienceSidebar">
-          <div class="col-md-4 blog-sidebar">
-            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQHxjr60WCGWKBMSg9evTTXBnD8sUc1poTrZ2CxwQUgd71_KUrZyw" width="300" height="260">
-          </div>
-        </div>
-
-     	<div class="map"></div>
+       
 
 
-
-      </div>
+  
     </div>
 
 
 	`
 	$('.mainList').empty();
+	$('.theForm').empty();
 	$('.mainList').prepend(detailHtml);
 }
 
@@ -215,6 +200,22 @@ function handleSaveClick() {
 function handleLocationUpdateResponse(data) {
 	let locationId = data._id;
 	console.log('resonse', data);
+	// debugger;
+
+	// $('div[data-event-id=locatinId]').find('.edit-location-name').remove().html(data.name);
+
+
+	// use locatinId to find correct card
+	// within htat card, find the name input – remove it, and put just text
+	// within that card, find the address input – remove the input, and put in the correct text
+	// within that card, find the descripiton input – remove the input, and put in the correct text
+
+
+
+	// $('[data-eventid=' + locationId + ']').find('.edit-location-name').remove().html('<input class="edit-location-name"> ' ${ data.name } '</input>')
+	
+
+
 	$('[data-eventid=' + locationId + ']').remove();
 	render(data);
 	// debugger;
@@ -248,10 +249,11 @@ function render(experience) {
 		      </div>
 		    </div>
 		  </div>
+		  <hr>
 	</div>
-	<hr>
+	
 	`
-	$('.mainList').append(expHtml);
+	$('.mainList').prepend(expHtml);
 
 }
 

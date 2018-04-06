@@ -5,13 +5,37 @@
 .form-horizontal {
     border-radius: 50px;
     border: 2px solid #73AD21;
-    padding: 20px;
-    width: 1200px 
+    padding: 10px;
+    margin-left: 130px;
+    width: 1000px 
 }
 
-#map {
-  height: 600px;
-  margin-top: 20px;
+.headline {
+  text-align: center;
+  font-size: 50px;
+  font-family: 'Passion One', cursive;
+}
+
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    border-radius: 20px;
+}
+
+
+
+.form-group {
+  display: flex;
+  text-align: center;
+}
+
+.formName {
+  text-align: center;
 }
 
 .experienceSidebar {
@@ -62,6 +86,7 @@ footer {
 }
 
 
+
 .copyright {
     font-family: Raleway;
     float: left;
@@ -92,6 +117,7 @@ footer {
   flex: 0 0 33.333333%;
   max-width: 33.333333%;
   display: block;
+ 
 }
 
 .hidden {
