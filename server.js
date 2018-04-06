@@ -28,6 +28,8 @@ app.get('/api/experience/:id', controllers.exp.show)
 
 app.post('/api/experience', controllers.exp.create);
 
+app.put('/api/experience/:id', controllers.exp.update);
+
 app.delete('/api/experience/:id', controllers.exp.destroy);
 
 app.listen(process.env.PORT || 3000, function() {

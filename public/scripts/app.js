@@ -1,6 +1,6 @@
 console.log('Sanity check!');
 
-
+let $locationRow; 
 
 $(document).ready(function() {
 	console.log('app.js loaded')
@@ -69,6 +69,10 @@ $(document).ready(function() {
 				}
 			})
 	})
+
+
+	$('.mainList').on('click', '.edit-btn', handleEditClick);
+	$('.mainList').on('click', '.save-btn', handleSaveClick);
 
 });
 
@@ -154,28 +158,81 @@ function renderDetails(detail) {
 	$('.mainList').prepend(detailHtml);
 }
 
+function handleEditClick(event) {
+	let currentId = event.target.dataset.eventid;
+	let $id = $(this).closest('.cards')
+	console.log('this is$id', $id);
+	console.log(currentId);
 
+	$id.find('.save-btn').toggleClass('hidden');
+
+	$id.find('.edit-btn').toggleClass('hidden');
+
+	// debugger;
+	
+	let locationName = $id.find('.locationName').text();
+	$id.find('.locationName').html('<input class="edit-location-name" value="' + locationName + '"></input>');
+
+	let locationAdds = $id.find('.locationAdds').text();
+	$id.find('.locationAdds').html('<input class="edit-location-adds" value="' + locationAdds + '"></input>');
+
+	let locationDesc = $id.find('.locationDesc').text();
+	$id.find('.locationDesc').html('<input class="edit-location-Desc" value="' + locationDesc + '"></input>');
+
+
+	// $('.panel-footer').find('.edit-btn').toggleClass('hidden');
+}
+
+function handleSaveClick() {
+	let currentId = event.target.dataset.eventid;
+	let $locationRow = $('[data-eventid=' + currentId + ']');
+
+	console.log($locationRow, '$locationRow')
+	console.log('this is saveclick currentid', currentId);
+	let data = {
+		name: $locationRow.find('.edit-location-name').val(),
+		address: $locationRow.find('.edit-location-adds').val(),
+		description: $locationRow.find('.edit-location-Desc').val()
+	};
+
+	console.log('this is data', data)
+	$.ajax({
+		method: 'PUT',
+		url: '/api/experience/' + currentId,
+		data: data,
+		success: handleLocationUpdateResponse
+	})
+}
+
+
+function handleLocationUpdateResponse(data) {
+	let locationId = data._id;
+	console.log('resonse', data);
+	$('[data-eventid=' + locationId + ']').remove();
+	render(data);
+	// debugger;
+}
 
 
 function render(experience) {
 	let expHtml = `
-	<div class="container py-3"  data-eventid="${ experience._id }">
+	<div class="container py-3 locat"  data-eventid="${ experience._id }">
 		<input type="checkbox">
 		<div class="cards">
 		  <div class="row">
 		    <div class="col-4">
-		        <img class="w-74" src=${ experience.photo }>
+		        <img class="w-74 locationPhoto" src=${ experience.photo }>
 		      </div>
 		      <div class="col-lg-4 px-3">
 		        <div class="card-block px-3">
-		          <h4 class="card-title">${ experience.name }</h4>
-		          <p class="card-text">${ experience.address }</p>
-		          <p class="card-text1">${ experience.description }</p>
+		          <h4 class="card-title locationName">${ experience.name }</h4>
+		          <p class="card-text locationAdds">${ experience.address }</p>
+		          <p class="card-text1 locationDesc">${ experience.description }</p>
 
 		          <div class='panel-footer'>
 			          <button class="btn btn-primary read-more-btn" data-eventid="${ experience._id }">Read More</button>
-					  <button class="btn btn-info edit-btn">Edit</button>
-					  <button class="btn btn-info save-btn hidden">Save</button>
+					  <button class="btn btn-info edit-btn" data-eventid="${ experience._id }">Edit</button>
+					  <button class="btn btn-info save-btn hidden" data-eventid="${ experience._id }">Save</button>
 					  <button class="btn btn-danger delete-btn" data-eventid="${ experience._id }">Delete</button>
 				  </div>
 		        </div>

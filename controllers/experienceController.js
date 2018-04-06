@@ -30,11 +30,28 @@ function destroy(req, res) {
 	});
 };
 
+function update(req, res) {
+	db.Experience.findById(req.params.id, function(err, foundLocation) {
+		console.log(111, foundLocation)
+		console.log(222, req.params)
+		console.log(444, req.body)
+		if (err) { console.log('Location update error: ', err) }
+		foundLocation.name = req.body.name;
+		foundLocation.address = req.body.address;
+		foundLocation.description = req.body.description;
+		foundLocation.save(function(err, savedLocation) {
+			if (err) { console.log('saving Location failed') }
+				console.log(333, savedLocation)
+			res.json(savedLocation);
+		})
+	})
+}
 
 
 module.exports = {
 	index: index,
 	create: create,
 	destroy: destroy,
-	show: show
+	show: show,
+	update: update
 }
