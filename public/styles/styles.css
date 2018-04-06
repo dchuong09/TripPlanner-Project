@@ -1,5 +1,17 @@
 .navbar-right {
-    margin-left: 420px;
+    margin-left: 450px;
+}
+
+.form-horizontal {
+    border-radius: 50px;
+    border: 2px solid #73AD21;
+    padding: 20px;
+    width: 1200px 
+}
+
+#map {
+  height: 600px;
+  margin-top: 20px;
 }
 
 .experienceSidebar {
@@ -8,13 +20,20 @@
     bottom: 400px
 }
 
+.navbar {
+  padding: 0;
+}
 
+.imgIcon {
+  margin-left: 20px;
+}
 
 #navMid {
-    color: #340D0D;
-    font-size: 37px;
+    color: #C13939;
+    font-size: 50px;
     font-weight: 700;
-    font-family: "Montserrat", "sans-seriff";
+    font-family: 'Passion One', cursive;
+
 }
 
 
@@ -34,6 +53,14 @@ footer {
     font-size: 14px;
     letter-spacing: 0.08em;
 }
+
+.iconPhoto {
+    border: 1px solid;
+    border-radius: 4px;
+    width: 250px;
+    height: 150px;
+}
+
 
 .copyright {
     font-family: Raleway;

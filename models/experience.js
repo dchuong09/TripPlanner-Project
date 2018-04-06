@@ -6,11 +6,11 @@ const Activity = require('./activities.js');
 const ExperienceSchema = new Schema({
 	name: String,
 	address: String,
-	description: String
-	// photo: String,
-	// type: String,
+	description: String,
+	photo: String,
+	type: String,
 	// activites: [ Activity.schema ],
-	// duration: String
+	duration: String
 });
 
 const Experience = mongoose.model('Experience', ExperienceSchema);

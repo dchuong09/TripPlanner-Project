@@ -5,6 +5,11 @@ let $locationRow;
 $(document).ready(function() {
 	console.log('app.js loaded')
 
+
+
+
+
+
 	// Render home page
 	$.ajax({
 		method: 'GET',
@@ -31,6 +36,7 @@ $(document).ready(function() {
 					if (detailPage._id === currentId) {
 						renderDetails(detailPage);
 					}
+
 					// console.log(detailPage)
 				})
 			},
@@ -128,6 +134,7 @@ function renderDetails(detail) {
           <hr>
           <h2>Where is it?</h2>
           <p>Add map API later</p>
+          
           <hr>
           <h2>Reviews</h2>
 		     	  <!-- reviews -->
@@ -214,6 +221,8 @@ function handleLocationUpdateResponse(data) {
 }
 
 
+
+
 function render(experience) {
 	let expHtml = `
 	<div class="container py-3 locat"  data-eventid="${ experience._id }">
@@ -221,7 +230,7 @@ function render(experience) {
 		<div class="cards">
 		  <div class="row">
 		    <div class="col-4">
-		        <img class="w-74 locationPhoto" src=${ experience.photo }>
+		        <img class="w-74 iconPhoto" src=${ experience.photo } >
 		      </div>
 		      <div class="col-lg-4 px-3">
 		        <div class="card-block px-3">
@@ -240,8 +249,11 @@ function render(experience) {
 		    </div>
 		  </div>
 	</div>
-
+	<hr>
 	`
-	$('.mainList').prepend(expHtml);
+	$('.mainList').append(expHtml);
 
 }
+
+
+
