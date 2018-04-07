@@ -1,28 +1,28 @@
-#SF Guide
+# SF Guide
 
->To Travel is to Live
-Hans Christian Andersen
+> To travel is to live
+Hans Christian Anderson
 
 SF Guide is a San Francisco trip planning tool. It allows you to easily create an itinerary of local favorites.
 
 Find the [SF Guide on Heroku](https://calm-caverns-75257.herokuapp.com/)
 
-##Technologies Used
-###Front End
+## Technologies Used
+### Front End
 - Javascript
 - HTML
 - CSS
 - Bootstrap
 
-###Back End
+### Back End
 - Node.js
 - Express
 - MongoDB
 
-##Thanks
+## Thanks
 :+1 :clap @esthersweon, @kbbushman & @falqas for pointing us in the right direction when we got lost at sea.
 
-##Installation
+## Installation
 
-##The Team
+## The Team
 @dchuong09 & @davidthayer
