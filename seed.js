@@ -2,7 +2,7 @@ const db = require('./models');
 
 const experienceLists = [{
 	name: 'Pier 39',
-	address: 'Fishermans Wharf, North Beach/Telegraph Hill',
+	address: 'Fishermans Wharf, North Beach',
 	description: 'Shopping Centers',
 	photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz3MU9HL0HOZRuk6rgGhjd9Q0xXnDdKgmIjpuhkl3ldP1aD8Iy1g',
 	duration: '2 hour',
@@ -39,7 +39,7 @@ const experienceLists = [{
 }, {
 	name: 'Palace Of Fine Arts',
 	address: '3601 Lyon St',
-	description: 'Landmarks & Historical Buildings, Venues & Event Spaces',
+	description: 'Landmarks & Historical Buildings',
 	photo: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWLqS7tGcwi8RZRwtHwkqOQXBVBcZ8bE8LwU0clAVD335hbhzi',
 	duration: '1 hour',
 	type: 'Art Experience',

@@ -124,7 +124,7 @@ function renderDetails(detail) {
       <div class="experienceContent">
         <div class="col-md-8 blog-main">
           <h2 class="blog-post-title">${ detail.name }</h2>
-          <p class="blog-post-meta">${ detail.type }</p>
+          <p class="blog-post-meta" style="color:#0000b3">${ detail.type }</p>
           <hr>
           <p>San Francisco</p>
           <p>${ detail.duration }</p>
@@ -180,8 +180,7 @@ function handleSaveClick() {
 	let currentId = event.target.dataset.eventid;
 	let $locationRow = $('[data-eventid=' + currentId + ']');
 
-	console.log($locationRow, '$locationRow')
-	console.log('this is saveclick currentid', currentId);
+
 	let data = {
 		name: $locationRow.find('.edit-location-name').val(),
 		address: $locationRow.find('.edit-location-adds').val(),
@@ -198,28 +197,31 @@ function handleSaveClick() {
 }
 
 
+
 function handleLocationUpdateResponse(data) {
 	let locationId = data._id;
+	// var idd = event.target;
+	// console.log('idd', idd);
 	console.log('resonse', data);
 	// debugger;
 
-	// $('div[data-event-id=locatinId]').find('.edit-location-name').remove().html(data.name);
+// 	// $('div[data-event-id=locatinId]').find('.edit-location-name').remove().html(data.name);
 
 
-	// use locatinId to find correct card
-	// within htat card, find the name input – remove it, and put just text
-	// within that card, find the address input – remove the input, and put in the correct text
-	// within that card, find the descripiton input – remove the input, and put in the correct text
+// 	// use locatinId to find correct card
+// 	// within htat card, find the name input – remove it, and put just text
+// 	// within that card, find the address input – remove the input, and put in the correct text
+// 	// within that card, find the descripiton input – remove the input, and put in the correct text
 
 
 
-	// $('[data-eventid=' + locationId + ']').find('.edit-location-name').remove().html('<input class="edit-location-name"> ' ${ data.name } '</input>')
+// 	// $('[data-eventid=' + locationId + ']').find('.edit-location-name').remove().html('<input class="edit-location-name"> ' ${ data.name } '</input>')
 
 
 
 	$('[data-eventid=' + locationId + ']').remove();
 	render(data);
-	// debugger;
+// 	// debugger;
 }
 
 

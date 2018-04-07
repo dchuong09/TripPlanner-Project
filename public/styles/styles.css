@@ -13,7 +13,12 @@
 .headline {
   text-align: center;
   font-size: 50px;
+  color: #804000;
   font-family: 'Passion One', cursive;
+}
+
+.col-4 {
+  left: 65px;
 }
 
 hr {
@@ -97,6 +102,11 @@ footer {
     
 }
 
+.locat {
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: 200px;
+}
+
 .copyright {
     font-family: Raleway;
     float: left;
@@ -113,6 +123,7 @@ footer {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+  font-family: 'Roboto Slab', serif;
 }
 .experienceContent {
   -webkit-box-flex: 0;
