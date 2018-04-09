@@ -179,10 +179,14 @@ function handleEditClick(event) {
 	// $('.panel-footer').find('.edit-btn').toggleClass('hidden');
 }
 
-function handleSaveClick() {
+function handleSaveClick(event) {
 	let currentId = event.target.dataset.eventid;
+	let $id = $(this).closest('.cards')
 	let $locationRow = $('[data-eventid=' + currentId + ']');
 	// $id.find('.save-btn').toggleClass('hidden');
+	$id.find('.edit-btn').toggleClass('hidden');
+
+	$id.find('.save-btn').toggleClass('hidden');
 
 
 	let data = {
