@@ -1,11 +1,10 @@
 # SF Guide
 
 > To travel is to live
-Hans Christian Anderson
 
-SF Guide is a San Francisco trip planning tool. It allows you to easily create an itinerary of local favorites.
+SF Guide is simple San Francisco trip planner. Select the places you want to see and save them to the top of the page, update their information, or view a detailed description of each location. 
 
-Find the [SF Guide on Heroku](https://calm-caverns-75257.herokuapp.com/)
+Try [SF Guide on Heroku](https://calm-caverns-75257.herokuapp.com/)
 
 ## Technologies Used
 ### Front End
@@ -20,9 +19,16 @@ Find the [SF Guide on Heroku](https://calm-caverns-75257.herokuapp.com/)
 - MongoDB
 
 ## Thanks
-:+1 :clap @esthersweon, @kbbushman & @falqas for pointing us in the right direction when we got lost at sea.
+:+1::+1: @esthersweon, @kbbushman & @falqas for pointing us in the right direction when we were lost in the woods.
 
 ## Installation
+* git clone
+* cd into TripPlanner-Project
+* run npm install
+    * mongod
+    * nodemon
+    * express
+* go to localhost:3000 and see it in action
 
 ## The Team
 @dchuong09 & @davidthayer
