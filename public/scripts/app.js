@@ -160,6 +160,7 @@ function handleEditClick(event) {
 
 
 	$id.find('.edit-btn').toggleClass('hidden');
+
 	$id.find('.save-btn').toggleClass('hidden');
 
 	// debugger;
@@ -182,7 +183,7 @@ function handleSaveClick() {
 	let currentId = event.target.dataset.eventid;
 	let $locationRow = $('[data-eventid=' + currentId + ']');
 	// $id.find('.save-btn').toggleClass('hidden');
-	
+
 
 	let data = {
 		name: $locationRow.find('.edit-location-name').val(),
@@ -195,10 +196,12 @@ function handleSaveClick() {
 		method: 'PUT',
 		url: '/api/experience/' + currentId,
 		data: data,
+		// success: handleLocationUpdateResponse
 		success: function(data) {
 			let nameReplace = $locationRow.find('.locationName').replaceWith(`<h4 class="card-title locationName">${ data.name }</h4>`);
 			let addsReplace = $locationRow.find('.locationAdds').replaceWith(`<p class="card-title locationAdds">${ data.address }</p>`);
 			let descReplace = $locationRow.find('.locationDesc').replaceWith(`<p class="card-title locationDesc">${ data.description }</p>`);
+
 			// $('.mainList').append('d');
 			// render(data);
 			// $(this).find(':first-child').remove();
