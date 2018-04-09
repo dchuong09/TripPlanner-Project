@@ -157,11 +157,13 @@ function handleEditClick(event) {
 	console.log('this is$id', $id);
 	console.log(currentId);
 
-	$id.find('.save-btn').toggleClass('hidden');
+
 
 	$id.find('.edit-btn').toggleClass('hidden');
+	$id.find('.save-btn').toggleClass('hidden');
 
 	// debugger;
+	// $id.find('.save-btn').toggleClass('hidden');
 	
 	let locationName = $id.find('.locationName').text();
 	$id.find('.locationName').html('<input class="edit-location-name" value="' + locationName + '"></input>');
@@ -179,7 +181,8 @@ function handleEditClick(event) {
 function handleSaveClick() {
 	let currentId = event.target.dataset.eventid;
 	let $locationRow = $('[data-eventid=' + currentId + ']');
-
+	// $id.find('.save-btn').toggleClass('hidden');
+	
 
 	let data = {
 		name: $locationRow.find('.edit-location-name').val(),
@@ -192,37 +195,52 @@ function handleSaveClick() {
 		method: 'PUT',
 		url: '/api/experience/' + currentId,
 		data: data,
-		success: handleLocationUpdateResponse
+		success: function(data) {
+			let nameReplace = $locationRow.find('.locationName').replaceWith(`<h4 class="card-title locationName">${ data.name }</h4>`);
+			let addsReplace = $locationRow.find('.locationAdds').replaceWith(`<p class="card-title locationAdds">${ data.address }</p>`);
+			let descReplace = $locationRow.find('.locationDesc').replaceWith(`<p class="card-title locationDesc">${ data.description }</p>`);
+			// $('.mainList').append('d');
+			// render(data);
+			// $(this).find(':first-child').remove();
+
+			// let nameReplace = $locationRow.find('.locationName').replaceWith(`<h4 class="card-title locationName">${ data.name }</h4>`);
+
+
+		}
 	})
 }
 
 
 
-function handleLocationUpdateResponse(data) {
-	let locationId = data._id;
-	// var idd = event.target;
-	// console.log('idd', idd);
-	console.log('resonse', data);
-	// debugger;
+// function handleLocationUpdateResponse(data) {
+// 	let locationId = data._id;
+// 	var idd = event.target.response
+// 	console.log('idd', idd);
+// 	console.log('resonse', data);
 
-// 	// $('div[data-event-id=locatinId]').find('.edit-location-name').remove().html(data.name);
+// 	// let $locationRow = $('[data-eventid=' + currentId + ']');
+// 	console.log('$locationRow', $locationRow);
 
-
-// 	// use locatinId to find correct card
-// 	// within htat card, find the name input – remove it, and put just text
-// 	// within that card, find the address input – remove the input, and put in the correct text
-// 	// within that card, find the descripiton input – remove the input, and put in the correct text
-
-
-
-// 	// $('[data-eventid=' + locationId + ']').find('.edit-location-name').remove().html('<input class="edit-location-name"> ' ${ data.name } '</input>')
-
-
-
-	$('[data-eventid=' + locationId + ']').remove();
-	render(data);
 // 	// debugger;
-}
+
+// // 	// $('div[data-event-id=locatinId]').find('.edit-location-name').remove().html(data.name);
+
+
+// // 	// use locatinId to find correct card
+// // 	// within htat card, find the name input – remove it, and put just text
+// // 	// within that card, find the address input – remove the input, and put in the correct text
+// // 	// within that card, find the descripiton input – remove the input, and put in the correct text
+
+
+
+// // 	// $('[data-eventid=' + locationId + ']').find('.edit-location-name').remove().html('<input class="edit-location-name"> ' ${ data.name } '</input>')
+
+
+
+// 	$('[data-eventid=' + locationId + ']').remove();
+// 	render(data);
+// // 	// debugger;
+// }
 
 
 
